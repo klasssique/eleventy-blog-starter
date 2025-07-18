@@ -1,6 +1,6 @@
 {
     "type": "Config",
-    "title": "Eleventy Blog Starter",
+    "title": "Thierry Berrou",
     "url": "https://example.com/",
     "description": "Explore the Eleventy Starter with Netlify demo",
     "navLinks": [
@@ -13,16 +13,16 @@
             "url": "/blog"
         },
         {
-            "label": "Eleventy + Netlify ↗",
-            "url": "https://docs.netlify.com/frameworks/eleventy/"
+            "label": "Doctolib ↗",
+            "url": "https://www.doctolib.fr/psychologue/clamart/thierry-berrou"
         }
     ],
     "hero": {
         "type": "Hero",
-        "title": "Designer, Frontend Developer & Mentor",
-        "text": "I’m a developer and UX/UI designer based in the U.S. with extensive experience in digital consulting. Passionate about minimal and brutalist design, I draw inspiration from nature, art, and a good cup of coffee.\n\n[Learn more](https://docs.netlify.com/frameworks/eleventy/)\n",
+        "title": "Psychologue, psychothérapeute et hypnothérapeute à Paris et Clamart",
+        "text": "Thierry Berrou, psychologue, psychothérapeute, hypnothérapeute et praticien EMDR. \nJe vous accueille sur rendez-vous au sein de mon cabinet situé à Clamart et dans mon cabinet situé à Paris, dans le 15ème arrondissement.Mon cursus me permet d'accueillir les adolescents, les adultes et les seniors pour travailler ensemble sur l'anxiété, le stress post-traumatique ainsi que les petits et gros traumatismes de la vie.",
         "image": {
-            "src": "/images/person.jpg",
+            "src": "/images/thierry.berrou.png",
             "alt": "Alt text"
         }
     },

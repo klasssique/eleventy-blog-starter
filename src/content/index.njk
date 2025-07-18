@@ -39,3 +39,19 @@ const latestPostsCount = 3;
         {{ morePosts }} more post{% if morePosts != 1 %}s{% endif %} can be found in <a class="text-white underline transition decoration-1 underline-offset-4 decoration-white hover:decoration-slate-400" href="blog.njk">the archive</a>.
     </div>
 {% endif %}
+
+<form class="p-4 mt-1 text-xl font-medium tracking-widest text-white uppercase bg-slate-600" name="contact" netlify>
+    <h1 style="text-align:center">Pour me contacter</h1>
+    <p>
+        <label>Prénom <input type="text" name="name" /></label>
+    </p>
+    <p>
+    <label>Nom <input type="text" name="family-name" /></label>
+    </p>
+    <p>
+    <label>Email <input type="email" name="email" /></label>
+    </p>
+    <p style="text-align:center">
+        <button type="submit">Send</button>
+    </p>
+</form>
