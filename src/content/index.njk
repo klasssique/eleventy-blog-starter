@@ -26,26 +26,43 @@ const latestPostsCount = 1;
     <p>Horaires</p>
 </div>
 
-<section class="flex flex-col w-full mb-1 bg-white sm:flex-row" data-sb-field-path={{ [siteConfigFilePath, ":hero"] | join  }}>
-    <div class="flex-1 w-full py-12 text-center {% if metadata.hero.image %}px-4 sm:px-8 sm:text-left{% else %}max-w-2xl mx-auto sm:py-16{% endif %}">
-        {% if metadata.hero.title %}
-            <h1 class="mb-4 text-3xl font-bold uppercase sm:text-4xl text-slate-800" data-sb-field-path=".title">Cabinet Paris</h1>
-        {% endif %}
-        {% if metadata.hero.text %}
-            <div class="prose max-w-none prose-slate" data-sb-field-path=".text">
-                {{ "Le lundi et le mercredi : de 11h à 21h" | markdown | safe }}
-            </div>
-        {% endif %}
+<section class="flex flex-col w-full mb-1 bg-white sm:flex-row">
+    <div class="flex-1 w-full py-12 text-center px-4 sm:px-8 sm:text-left">
+        <h1 class="mb-4 text-2xl font-bold uppercase sm:text-4xl text-slate-800">Cabinet de Paris</h1>
+        <a class="mb-4 text-s sm:text-s text-slate-800" href="https://maps.app.goo.gl/PkyiaZVu4d7VUPtT6" target="_blank">74 Av. Victor Hugo, 92140 Clamart ↗</a>
+        <div class="prose max-w-none prose-slate font-bold">
+            {{ "Le lundi et le mercredi : de 11h à 21h" | markdown | safe }}
+        </div>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2625.8874649604445!2d2.3057512761450116!3d48.8412852019105!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e67039f28e36b7%3A0x72ceaaa51ad3e2ce!2s29%20Rue%20des%20Volontaires%2C%2075015%20Paris!5e0!3m2!1sen!2sfr!4v1752934206223!5m2!1sen!2sfr" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
     </div>
-    <div class="flex-1 w-full py-12 text-center {% if metadata.hero.image %}px-4 sm:px-8 sm:text-left{% else %}max-w-2xl mx-auto sm:py-16{% endif %}">
-        {% if metadata.hero.title %}
-            <h1 class="mb-4 text-3xl font-bold uppercase sm:text-4xl text-slate-800" data-sb-field-path=".title">Cabinet Clamart</h1>
-        {% endif %}
-        {% if metadata.hero.text %}
-            <div class="prose max-w-none prose-slate" data-sb-field-path=".text">
-                {{ "Le mardi, jeudi et vendredi : de 11h à 21h " | markdown | safe }}
-            </div>
-        {% endif %}
+    <div class="flex-1 w-full py-12 text-center px-4 sm:px-8 sm:text-left gap-4">
+        <h1 class="mb-4 text-2xl font-bold uppercase sm:text-4xl text-slate-800">Cabinet de Clamart</h1>
+        <a class="mb-4 text-s sm:text-s text-slate-800" href="https://maps.app.goo.gl/hz3r7J689mTZ11d76" target="_blank">74 Av. Victor Hugo, 92140 Clamart ↗</a>
+        <div class="prose max-w-none prose-slate font-bold">
+            {{ "Le mardi, jeudi et vendredi : de 11h à 21h" | markdown | safe }}
+        </div>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2627.7605976610944!2d2.2663076761429726!3d48.80554760442419!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e67a7717f4b89b%3A0xb4e1fd2b0ca177d3!2s74%20Av.%20Victor%20Hugo%2C%2092140%20Clamart!5e0!3m2!1sen!2sfr!4v1752934480428!5m2!1sen!2sfr" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+</section>
+
+<div class="flex flex-wrap justify-between w-full text-xs font-medium tracking-widest text-white uppercase bg-slate-600 gap-x-6 gap-y-2">
+    <img src="images/split.jpeg" alt="">
+</div>
+
+<section class="w-full mb-1 bg-white sm:flex-row">
+    <div class="w-full py-6 text-center px-4 sm:px-8 sm:text-left">
+        <h1 class="mb-4 text-s sm:text-s text-slate-800">
+            {{ "Formé et diplômé en psychologie, psychothérapie et hypnothérapie, je reçois les adolescents, les adultes et les seniors au cours de séances individuelles.  \nEnsemble, nous avançons et traitons de la dépression, des troubles anxieux, du stress post-traumatique ainsi que de tous les petits et gros traumatismes de la vie courante." | markdown | safe }}
+        </h1>
+    </div>
+    <div class="w-full py-12 text-center">
+        <h1 class="prose max-w-none text-center prose-slate text-3xl">
+            {{ "J'exerce depuis plus de 25 ans" | markdown | safe }}
+        </h1>
+    </div>
+    <div class="flex flex-row w-full py-6 px-4 sm:px-8">
+        <div class="basis-1/2 prose max-w-none prose-slate text-2xl font-bold">Formation</div>
+        <div class="basis-1/2 prose max-w-none prose-slate text-2xl font-bold">Spécialités</div>
     </div>
 </section>
 
@@ -76,7 +93,7 @@ const latestPostsCount = 1;
                    type="text" 
                    id="name" 
                    name="name" 
-                   placeholder="Jane" />
+                   placeholder="Marie" />
         </div>
         <div class="space-y-2">
             <label class="block text-sm font-medium text-slate-200" for="family-name">Nom</label>
@@ -84,7 +101,7 @@ const latestPostsCount = 1;
                    type="text" 
                    id="family-name" 
                    name="family-name" 
-                   placeholder="Doe" />
+                   placeholder="Dupont" />
         </div>
     </div>
     <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-6">
@@ -94,7 +111,7 @@ const latestPostsCount = 1;
                    type="email" 
                    id="email" 
                    name="email" 
-                   placeholder="jane.doe@example.com" />
+                   placeholder="marie.dupont@exemple.fr" />
         </div>
         <div class="space-y-2">
             <label class="block text-sm font-medium text-slate-200" for="phone">Téléphone</label>
@@ -110,7 +127,7 @@ const latestPostsCount = 1;
                    type="text" 
                    id="subject" 
                    name="subject" 
-                   placeholder="Demande de renseignements" />
+                   placeholder="Demande de rendez-vous" />
         </div>
     </div>
     <div class="mt-6 space-y-2">
@@ -118,7 +135,7 @@ const latestPostsCount = 1;
         <textarea class="w-full px-4 py-3 bg-slate-800 text-white rounded-lg border border-slate-600 focus:outline-none focus:ring-2 focus:ring-slate-400 focus:border-transparent transition h-32" 
                   id="message" 
                   name="message" 
-                  placeholder="Bonjour, je souhaiterais avoir plus d'informations sur vos services..."></textarea>
+                  placeholder="Bonjour, je souhaite prendre rendez-vous pour une consultation..."></textarea>
     </div>
     <div class="mt-6 text-center">
         <button class="px-6 py-3 bg-slate-600 text-white font-bold uppercase rounded-lg hover:bg-slate-500 transition" 
