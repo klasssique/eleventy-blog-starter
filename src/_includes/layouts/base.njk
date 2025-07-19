@@ -25,10 +25,5 @@
                 {{ content | safe }}
             </div>
         </main>
-        {% if metadata.copyrightText %}
-            <footer class="px-4 pb-16 sm:pb-24">
-                <div class="max-w-4xl mx-auto prose-sm prose text-center prose-slate prose-invert" data-sb-field-path={{ [siteConfigFilePath, ":copyrightText"] | join  }}>{{ metadata.copyrightText | markdown | safe }}</div>
-            </footer>
-        {% endif %}
     </body>
 </html>

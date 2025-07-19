@@ -1,11 +1,10 @@
 ---
 type: Post
-slug: post-1
+slug: def
 title: Définitions
 date: '2025-07-19'
 description: >-
-  This is the default description for the blog post. Customize it to highlight
-  your content!
+  Quelques définitions
 image: /images/sand.jpeg
 ---
 ### La psychologie

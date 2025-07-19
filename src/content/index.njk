@@ -1,5 +1,5 @@
 ---js
-const latestPostsCount = 3;
+const latestPostsCount = 1;
 ---
 
 {% if metadata.hero %}
@@ -22,11 +22,38 @@ const latestPostsCount = 3;
     </section>
 {% endif %}
 
+<div class="flex flex-wrap justify-between w-full p-4 mb-1 text-xs font-medium tracking-widest text-white uppercase bg-slate-600 gap-x-6 gap-y-2">
+    <p>Horaires</p>
+</div>
+
+<section class="flex flex-col w-full mb-1 bg-white sm:flex-row" data-sb-field-path={{ [siteConfigFilePath, ":hero"] | join  }}>
+    <div class="flex-1 w-full py-12 text-center {% if metadata.hero.image %}px-4 sm:px-8 sm:text-left{% else %}max-w-2xl mx-auto sm:py-16{% endif %}">
+        {% if metadata.hero.title %}
+            <h1 class="mb-4 text-3xl font-bold uppercase sm:text-4xl text-slate-800" data-sb-field-path=".title">Cabinet Paris</h1>
+        {% endif %}
+        {% if metadata.hero.text %}
+            <div class="prose max-w-none prose-slate" data-sb-field-path=".text">
+                {{ "Le lundi et le mercredi : de 11h à 21h" | markdown | safe }}
+            </div>
+        {% endif %}
+    </div>
+    <div class="flex-1 w-full py-12 text-center {% if metadata.hero.image %}px-4 sm:px-8 sm:text-left{% else %}max-w-2xl mx-auto sm:py-16{% endif %}">
+        {% if metadata.hero.title %}
+            <h1 class="mb-4 text-3xl font-bold uppercase sm:text-4xl text-slate-800" data-sb-field-path=".title">Cabinet Clamart</h1>
+        {% endif %}
+        {% if metadata.hero.text %}
+            <div class="prose max-w-none prose-slate" data-sb-field-path=".text">
+                {{ "Le mardi, jeudi et vendredi : de 11h à 21h " | markdown | safe }}
+            </div>
+        {% endif %}
+    </div>
+</section>
+
 {% set postsCount = collections.posts | length %}
 {% set latestPostsCount = postsCount | min(latestPostsCount) %}
 <div class="flex flex-wrap justify-between w-full p-4 mb-1 text-xs font-medium tracking-widest text-white uppercase bg-slate-600 gap-x-6 gap-y-2">
-    <p>Latest {{ latestPostsCount }} Post{% if latestPostsCount != 1 %}s{% endif%} &darr;</p>
-    <a class="text-white underline transition decoration-1 underline-offset-4 decoration-white hover:decoration-slate-400" href="/blog">View all posts &rarr;</a>
+    <p>Dernière publication{% if latestPostsCount != 1 %}s{% endif%} &darr;</p>
+    <a class="text-white underline transition decoration-1 underline-offset-4 decoration-white hover:decoration-slate-400" href="/blog">Accéder à toutes les publications &rarr;</a>
 </div>
 
 {% set postslist = collections.posts | head(-1 * latestPostsCount) %}
@@ -36,22 +63,67 @@ const latestPostsCount = 3;
 {% set morePosts = postsCount - latestPostsCount %}
 {% if morePosts > 0 %}
     <div class="p-4 mt-1 text-xs font-medium tracking-widest text-white uppercase bg-slate-600">
-        {{ morePosts }} more post{% if morePosts != 1 %}s{% endif %} can be found in <a class="text-white underline transition decoration-1 underline-offset-4 decoration-white hover:decoration-slate-400" href="blog.njk">the archive</a>.
+        {{ morePosts }} autre{% if morePosts != 1 %}s{% endif %} publication{% if morePosts != 1 %}s{% endif %} sont disponibles dans <a class="text-white underline transition decoration-1 underline-offset-4 decoration-white hover:decoration-slate-400" href="blog.njk">les archives</a>.
     </div>
 {% endif %}
 
-<form class="p-4 mt-1 text-xl font-medium tracking-widest text-white uppercase bg-slate-600" name="contact" netlify>
-    <h1 style="text-align:center">Pour me contacter</h1>
-    <p>
-        <label>Prénom <input type="text" name="name" /></label>
-    </p>
-    <p>
-    <label>Nom <input type="text" name="family-name" /></label>
-    </p>
-    <p>
-    <label>Email <input type="email" name="email" /></label>
-    </p>
-    <p style="text-align:center">
-        <button type="submit">Send</button>
-    </p>
+<form class="max-w-2xl mx-auto p-8 mt-8 bg-slate-700 rounded-xl shadow-xl text-white border border-slate-600">
+    <h1 class="text-3xl font-bold text-center mb-8">Me contacter</h1>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="space-y-2">
+            <label class="block text-sm font-medium text-slate-200" for="name">Prénom</label>
+            <input class="w-full px-4 py-3 bg-slate-800 text-white rounded-lg border border-slate-600 focus:outline-none focus:ring-2 focus:ring-slate-400 focus:border-transparent transition" 
+                   type="text" 
+                   id="name" 
+                   name="name" 
+                   placeholder="Jane" />
+        </div>
+        <div class="space-y-2">
+            <label class="block text-sm font-medium text-slate-200" for="family-name">Nom</label>
+            <input class="w-full px-4 py-3 bg-slate-800 text-white rounded-lg border border-slate-600 focus:outline-none focus:ring-2 focus:ring-slate-400 focus:border-transparent transition" 
+                   type="text" 
+                   id="family-name" 
+                   name="family-name" 
+                   placeholder="Doe" />
+        </div>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-6">
+        <div class="space-y-2">
+            <label class="block text-sm font-medium text-slate-200" for="email">Email</label>
+            <input class="w-full px-4 py-3 bg-slate-800 text-white rounded-lg border border-slate-600 focus:outline-none focus:ring-2 focus:ring-slate-400 focus:border-transparent transition" 
+                   type="email" 
+                   id="email" 
+                   name="email" 
+                   placeholder="jane.doe@example.com" />
+        </div>
+        <div class="space-y-2">
+            <label class="block text-sm font-medium text-slate-200" for="phone">Téléphone</label>
+            <input class="w-full px-4 py-3 bg-slate-800 text-white rounded-lg border border-slate-600 focus:outline-none focus:ring-2 focus:ring-slate-400 focus:border-transparent transition" 
+                   type="tel" 
+                   id="phone" 
+                   name="phone" 
+                   placeholder="01 23 45 67 89" />
+        </div>
+        <div class="space-y-2">
+            <label class="block text-sm font-medium text-slate-200" for="subject">Objet</label>
+            <input class="w-full px-4 py-3 bg-slate-800 text-white rounded-lg border border-slate-600 focus:outline-none focus:ring-2 focus:ring-slate-400 focus:border-transparent transition" 
+                   type="text" 
+                   id="subject" 
+                   name="subject" 
+                   placeholder="Demande de renseignements" />
+        </div>
+    </div>
+    <div class="mt-6 space-y-2">
+        <label class="block text-sm font-medium text-slate-200" for="message">Message</label>
+        <textarea class="w-full px-4 py-3 bg-slate-800 text-white rounded-lg border border-slate-600 focus:outline-none focus:ring-2 focus:ring-slate-400 focus:border-transparent transition h-32" 
+                  id="message" 
+                  name="message" 
+                  placeholder="Bonjour, je souhaiterais avoir plus d'informations sur vos services..."></textarea>
+    </div>
+    <div class="mt-6 text-center">
+        <button class="px-6 py-3 bg-slate-600 text-white font-bold uppercase rounded-lg hover:bg-slate-500 transition" 
+                type="submit">
+            Envoyer
+        </button>
+    </div>
 </form>

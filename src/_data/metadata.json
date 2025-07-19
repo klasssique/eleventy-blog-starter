@@ -2,29 +2,36 @@
     "type": "Config",
     "title": "Thierry Berrou",
     "url": "https://example.com/",
-    "description": "Explore the Eleventy Starter with Netlify demo",
+    "description": "Psychologue, psychothérapeute et hypnothérapeute à Paris et Clamart",
     "navLinks": [
         {
-            "label": "Home",
+            "label": "Page d'accueil",
             "url": "/"
         },
         {
-            "label": "Blog",
-            "url": "/blog"
+            "label": "Publications",
+            "url": "/publications"
         },
         {
             "label": "Doctolib ↗",
             "url": "https://www.doctolib.fr/psychologue/clamart/thierry-berrou"
+        },
+        {
+            "label": "06 76 82 61 02",
+            "url": "tel:0676826102"
         }
     ],
     "hero": {
         "type": "Hero",
-        "title": "Psychologue, psychothérapeute et hypnothérapeute à Paris et Clamart",
-        "text": "Thierry Berrou, psychologue, psychothérapeute, hypnothérapeute et praticien EMDR. \nJe vous accueille sur rendez-vous au sein de mon cabinet situé à Clamart et dans mon cabinet situé à Paris, dans le 15ème arrondissement.Mon cursus me permet d'accueillir les adolescents, les adultes et les seniors pour travailler ensemble sur l'anxiété, le stress post-traumatique ainsi que les petits et gros traumatismes de la vie.",
+        "title": "Psychologue, psychothérapeute et hypnothérapeute",
+        "text": "Thierry Berrou, psychologue, psychothérapeute, hypnothérapeute et praticien EMDR.  \nJe vous accueille sur rendez-vous au sein de mon cabinet situé à Clamart et dans mon cabinet situé à Paris, dans le 15ème arrondissement.  \nMon cursus me permet d'accueillir les adolescents, les adultes et les seniors pour travailler ensemble sur l'anxiété, le stress post-traumatique ainsi que les petits et gros traumatismes de la vie.",
         "image": {
             "src": "/images/thierry.berrou.png",
             "alt": "Alt text"
+        },
+        "button": {
+            "label": "Prendre rendez-vous",
+            "url": "https://www.doctolib.fr/psychologue/clamart/thierry-berrou"
         }
-    },
-    "copyrightText": "© 2024 Eleventy Blog Starter. All rights reserved."
+    }
 }
